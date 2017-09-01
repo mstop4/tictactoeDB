@@ -24,6 +24,8 @@ db.db
 
 db.createTable()
 
+setTimeout(db.query, 1000)
+
 /**
  * Get port from environment and store in Express.
  */

@@ -11,9 +11,11 @@ const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.D
   }
 })
 
+var Game
+
 createTable = () => {
 
-  const Game = db.define('game', {
+  Game = db.define('game', {
     moves: {
       type: Sequelize.STRING
     },
@@ -32,7 +34,17 @@ createTable = () => {
 
 }
 
+query = () => {
+
+  Game.findAll()
+    .then(games => {
+      console.dir(games[0])
+    })
+
+}
+
 module.exports = {
   db: db,
-  createTable: createTable
+  createTable: createTable,
+  query: query
 }
