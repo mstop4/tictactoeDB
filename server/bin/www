@@ -13,7 +13,7 @@ var http = require('http');
 * Test DB connection
 */
 
-db
+db.db
   .authenticate()
   .then(() => {
     console.log('Database connection is OK.')
@@ -22,6 +22,7 @@ db
     console.error("Can't connect to database!")
   })
 
+db.createTable()
 
 /**
  * Get port from environment and store in Express.
