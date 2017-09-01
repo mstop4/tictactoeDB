@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv-safe').config()
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
