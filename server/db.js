@@ -44,13 +44,9 @@ queryGames = () => {
 }
 
 getMoves = (gameNum) => {
-  return Games.findAll()
-    .then(games => {
-      if (games[gameNum]) {
-        console.dir(games[gameNum].dataValues.moves)
-      } else {
-        console.log("No game found.")
-      }
+  Games.findById(gameNum)
+    .then(game => {
+      return game
   })
 }
 

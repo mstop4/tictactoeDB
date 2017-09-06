@@ -21,9 +21,9 @@ db.db
     db.useTable(true)
     .then(() => {
       db.addGame("453", true)
-      .then(() => {
-        db.getMoves(0);
-      })
+      // .then(() => {
+      //   db.getMoves(1)
+      // })
     })
   })
   .catch(err => {

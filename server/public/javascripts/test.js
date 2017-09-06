@@ -1,0 +1,4 @@
+test = () => {
+  prompt("Which game?")
+
+}
