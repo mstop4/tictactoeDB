@@ -17,14 +17,16 @@ db.db
   .authenticate()
   .then(() => {
     console.log('Database connection is OK.')
+
+    db.createTable()
+
+    setTimeout(function() {db.addGame("1234567", true)}, 500)
+    setTimeout(db.queryGames, 1000)
+
   })
   .catch(err => {
     console.error("Can't connect to database!")
   })
-
-db.createTable()
-
-setTimeout(db.query, 1000)
 
 /**
  * Get port from environment and store in Express.

@@ -3,6 +3,9 @@ var Sequelize = require('sequelize');
 const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
   host: 'localhost',
   dialect: 'postgres',
+  define: {
+    timestamps: false
+  },
 
   pool: {
     max: 5,
@@ -14,7 +17,6 @@ const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.D
 var Game
 
 createTable = () => {
-
   Game = db.define('game', {
     moves: {
       type: Sequelize.STRING
@@ -25,26 +27,25 @@ createTable = () => {
   })
 
   Game.sync({force: true})
-    .then(() => {
-    return Game.create({
-      moves: '12634',
-      x_wins: true
-    })
-  })
-
 }
 
-query = () => {
+addGame = (moves, x_wins) => {
+  Game.create({
+      moves: moves,
+      x_wins: x_wins
+  })
+}
 
+queryGames = () => {
   Game.findAll()
     .then(games => {
       console.dir(games[0])
     })
-
 }
 
 module.exports = {
   db: db,
   createTable: createTable,
-  query: query
+  addGame: addGame,
+  queryGames: queryGames
 }
