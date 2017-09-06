@@ -40,12 +40,24 @@ queryGames = () => {
   Games.findAll()
     .then(games => {
       console.dir(games)
-    })
+  })
+}
+
+getMoves = (gameNum) => {
+  Games.findAll()
+    .then(games => {
+      if (games[gameNum]) {
+        console.dir(games[gameNum].dataValues.moves)
+      } else {
+        console.log("No game found.")
+      }
+  })
 }
 
 module.exports = {
   db: db,
   useTable: useTable,
   addGame: addGame,
-  queryGames: queryGames
+  queryGames: queryGames,
+  getMoves: getMoves
 }

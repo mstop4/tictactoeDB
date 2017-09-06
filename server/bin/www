@@ -20,7 +20,7 @@ db.db
 
     db.useTable(true)
     setTimeout(function() {db.addGame("453", true)}, 500)
-    setTimeout(db.queryGames, 1000)
+    setTimeout(function() {db.getMoves(0)}, 1000)
 
   })
   .catch(err => {
