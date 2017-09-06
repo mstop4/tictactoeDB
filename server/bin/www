@@ -18,8 +18,7 @@ db.db
   .then(() => {
     console.log('Database connection is OK.')
 
-    //db.createTable()
-    db.useTable()
+    db.useTable(true)
     setTimeout(function() {db.addGame("453", true)}, 500)
     setTimeout(db.queryGames, 1000)
 

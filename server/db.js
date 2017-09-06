@@ -14,10 +14,10 @@ const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.D
   }
 })
 
-var Game
+var Games
 
-createTable = () => {
-  Game = db.define('game', {
+useTable = (newTable) => {
+  Games = db.define('game', {
     moves: {
       type: Sequelize.STRING
     },
@@ -26,31 +26,18 @@ createTable = () => {
     }
   })
 
-  Game.sync({force: true})
-}
-
-useTable = () => {
-  Game = db.define('game', {
-    moves: {
-      type: Sequelize.STRING
-    },
-    x_wins: {
-      type: Sequelize.BOOLEAN
-    }
-  })
-
-  Game.sync({force: false})
+  Games.sync({force: newTable})
 }
 
 addGame = (moves, x_wins) => {
-  Game.create({
+  Games.create({
       moves: moves,
       x_wins: x_wins
   })
 }
 
 queryGames = () => {
-  Game.findAll()
+  Games.findAll()
     .then(games => {
       console.dir(games)
     })
@@ -58,7 +45,6 @@ queryGames = () => {
 
 module.exports = {
   db: db,
-  createTable: createTable,
   useTable: useTable,
   addGame: addGame,
   queryGames: queryGames
