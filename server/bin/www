@@ -19,9 +19,12 @@ db.db
     console.log('Database connection is OK.')
 
     db.useTable(true)
-    setTimeout(function() {db.addGame("453", true)}, 500)
-    setTimeout(function() {db.getMoves(0)}, 1000)
-
+    .then(() => {
+      db.addGame("453", true)
+      .then(() => {
+        db.getMoves(0);
+      })
+    })
   })
   .catch(err => {
     console.error(`Can't connect to database! ${err}`)

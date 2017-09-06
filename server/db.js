@@ -26,25 +26,25 @@ useTable = (newTable) => {
     }
   })
 
-  Games.sync({force: newTable})
+  return Games.sync({force: newTable})
 }
 
 addGame = (moves, x_wins) => {
-  Games.create({
+  return Games.create({
       moves: moves,
       x_wins: x_wins
   })
 }
 
 queryGames = () => {
-  Games.findAll()
+  return Games.findAll()
     .then(games => {
       console.dir(games)
   })
 }
 
 getMoves = (gameNum) => {
-  Games.findAll()
+  return Games.findAll()
     .then(games => {
       if (games[gameNum]) {
         console.dir(games[gameNum].dataValues.moves)
