@@ -29,6 +29,19 @@ createTable = () => {
   Game.sync({force: true})
 }
 
+useTable = () => {
+  Game = db.define('game', {
+    moves: {
+      type: Sequelize.STRING
+    },
+    x_wins: {
+      type: Sequelize.BOOLEAN
+    }
+  })
+
+  Game.sync({force: false})
+}
+
 addGame = (moves, x_wins) => {
   Game.create({
       moves: moves,
@@ -39,13 +52,14 @@ addGame = (moves, x_wins) => {
 queryGames = () => {
   Game.findAll()
     .then(games => {
-      console.dir(games[0])
+      console.dir(games)
     })
 }
 
 module.exports = {
   db: db,
   createTable: createTable,
+  useTable: useTable,
   addGame: addGame,
   queryGames: queryGames
 }
