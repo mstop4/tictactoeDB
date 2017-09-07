@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <header>
+  </header>
+
+  <main>
+    <table>
+      <tr>
+        <th>Game</th>
+        <th>Moves</th>
+        <th>Winner</th>
+      </tr>
+      <% games.forEach( function(game) { %>
+        <tr>
+          <td><%= game.id %></td>
+          <td><%= game.moves %></td>
+          <td><%= game.winner %></td>
+        </tr>
+      <% }); %>
+    </table>
+  </main>
+
+  <footer>
+  </footer>
+
+</body>
+</html>
