@@ -21,33 +21,27 @@ useTable = (newTable) => {
     moves: {
       type: Sequelize.STRING
     },
-    x_wins: {
-      type: Sequelize.BOOLEAN
+    winner: {
+      type: Sequelize.CHAR(1)
     }
   })
 
   return Games.sync({force: newTable})
 }
 
-addGame = (moves, x_wins) => {
+addGame = (moves, winner) => {
   return Games.create({
       moves: moves,
-      x_wins: x_wins
+      winner: winner.toUpperCase()
   })
 }
 
 queryGames = () => {
   return Games.findAll()
-    .then(games => {
-      console.dir(games)
-  })
 }
 
 getMoves = (gameNum) => {
-  Games.findById(gameNum)
-    .then(game => {
-      return game
-  })
+  return Games.findById(gameNum)
 }
 
 module.exports = {
