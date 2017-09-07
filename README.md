@@ -1,4 +1,4 @@
-# TTTDB
+# TTTDB 🖥️❌⭕🤷
 
 A little experiment in databases, APIs, and machine learning.
 
