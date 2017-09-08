@@ -4,7 +4,7 @@
     "mvc": "1.0",
     "name": "HTML5",
     "option_html5_allow_fullscreen": true,
-    "option_html5_browser_title": "Made in GameMaker Studio 2",
+    "option_html5_browser_title": "Tic-Tac-Toe DB",
     "option_html5_centregame": false,
     "option_html5_display_cursor": true,
     "option_html5_facebook_app_display_name": "",
@@ -14,7 +14,11 @@
     "option_html5_foldername": "tttdb",
     "option_html5_google_analytics_enable": false,
     "option_html5_google_tracking_id": "",
+<<<<<<< Updated upstream
     "option_html5_icon": "${base_options_dir}\\html5\\fav.ico",
+=======
+    "option_html5_icon": "${base_options_dir}\/html5\/fav.ico",
+>>>>>>> Stashed changes
     "option_html5_index": "use_default",
     "option_html5_interpolate_pixels": false,
     "option_html5_jsprepend": "",
@@ -30,8 +34,8 @@
     "option_html5_usesplash": false,
     "option_html5_version": {
         "build": 0,
-        "major": 1,
-        "minor": 0,
+        "major": 0,
+        "minor": 2,
         "revision": 0
     },
     "option_html5_webgl": 2

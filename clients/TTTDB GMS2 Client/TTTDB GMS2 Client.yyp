@@ -55,6 +55,30 @@
             }
         },
         {
+            "Key": "244fce62-d8ad-4f35-af1f-66214ceb5e42",
+            "Value": {
+                "id": "162b8eb3-b865-4a74-9c52-748d3ca22a4c",
+                "resourcePath": "objects\\obj_tictactoe\\obj_tictactoe.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2844269c-7b53-41a8-9b66-3dab43cc9373",
+            "Value": {
+                "id": "9830188d-f33b-4adf-a5ef-9310f660ceeb",
+                "resourcePath": "objects\\obj_square\\obj_square.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2a692a6a-f82e-49d7-b0db-d4918969442e",
+            "Value": {
+                "id": "b2400864-ecf9-4700-9e2c-56f5a23e4fd6",
+                "resourcePath": "scripts\\checkForWinner\\checkForWinner.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2e3326ea-9479-47a0-8763-99b82cbc0107",
             "Value": {
                 "id": "1b140444-be42-4bbd-9f2c-5211e4f2d249",
@@ -151,11 +175,27 @@
             }
         },
         {
+            "Key": "a0e66cb7-cd87-474c-af0f-a4129251e07e",
+            "Value": {
+                "id": "7eda17d2-16e7-41a0-b4d5-776eeca67856",
+                "resourcePath": "fonts\\fnt_XO\\fnt_XO.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "ec533e3c-8638-49f6-8892-b743adb1ca46",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "aaddd80d-ab7b-4940-aad0-ad4612d5021f",
+            "Value": {
+                "id": "3a22bd47-58c7-48b0-830d-a99c9ea77391",
+                "resourcePath": "sprites\\spr_square\\spr_square.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -241,7 +281,8 @@
     ],
     "script_order": [
         "cd14526b-bdf5-4d7f-81e3-9c78e946c683",
-        "3734a97f-a544-4ee5-a85c-6724b1f82cc5"
+        "3734a97f-a544-4ee5-a85c-6724b1f82cc5",
+        "2a692a6a-f82e-49d7-b0db-d4918969442e"
     ],
     "tutorial": ""
 }
