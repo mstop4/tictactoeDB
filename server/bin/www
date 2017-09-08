@@ -5,24 +5,9 @@
  */
 
 var app = require('../app');
-var db = require('../lib/db');
+var db = require('../models');
 var debug = require('debug')('server:server');
 var http = require('http');
-
-/*
-* Test DB connection
-*/
-
-db.db
-  .authenticate()
-  .then(() => {
-    console.log('Database connection is OK.')
-
-    db.useTable(true)
-  })
-  .catch(err => {
-    console.error(`Can't connect to database! ${err}`)
-  })
 
 /**
  * Get port from environment and store in Express.
@@ -103,5 +88,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  db.sequelize.sync();
   console.log(`Tic-Tac-Toe DB Server listening on port ${port}`)
 }

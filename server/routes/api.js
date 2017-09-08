@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../lib/db');
+var db = require('../lib/dbHelpers');
 
 /* GET game. */
 
