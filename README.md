@@ -1,12 +1,10 @@
-# TTTDB
+# Tic-Tac-Toe DB
 
 🎵 *Well, I had me a boy  
 turned him into a man  
 I showed him all the things  
 that he didn't understand  
 Whoa, and then I let him go* 🎵
-
----
 
 A little experiment in databases, APIs, and machine learning.
 
