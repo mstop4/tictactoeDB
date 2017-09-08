@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Post a new game to database
 
-moves_diag = get_string_async("Enter moves", "");
-winner_diag = get_string_async("Enter winner", "");
+moves_post = get_string_async("Enter moves", "");
+winner_post = get_string_async("Enter winner", "");

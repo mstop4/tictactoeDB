@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "3734a97f-a544-4ee5-a85c-6724b1f82cc5",
+            "Value": {
+                "id": "bd0e3426-ac46-4791-bc0b-65f48f914fef",
+                "resourcePath": "scripts\\gameSearch\\gameSearch.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3ec186cc-1946-43b2-ba97-dbef0e3c7804",
             "Value": {
                 "id": "4a9ae25e-dd38-40ef-8776-836604c93deb",
@@ -232,7 +240,8 @@
         }
     ],
     "script_order": [
-        "cd14526b-bdf5-4d7f-81e3-9c78e946c683"
+        "cd14526b-bdf5-4d7f-81e3-9c78e946c683",
+        "3734a97f-a544-4ee5-a85c-6724b1f82cc5"
     ],
     "tutorial": ""
 }

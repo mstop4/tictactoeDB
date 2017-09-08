@@ -1,24 +1,43 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description handle dialogs
 
-var res_id = ds_map_find_value(async_load, "id");
+var res_id = async_load[? "id"];
 
-if (res_id == moves_diag)
+if (res_id == moves_post)
 {
-	if (ds_map_find_value(async_load, "status"))
+	if (async_load[? "status"])
 	{
-		moves = ds_map_find_value(async_load, "result");
+		moves = async_load[? "result"];
 		moves_ready = true;
 		gameAdd(moves, winner);
 	}
 }
 
-else if (res_id == winner_diag)
+else if (res_id == winner_post)
 {
-	if (ds_map_find_value(async_load, "status"))
+	if (async_load[? "status"])
 	{
-		winner = ds_map_find_value(async_load, "result");
+		winner = async_load[? "result"];
 		winner_ready = true;
 		gameAdd(moves, winner);
+	}
+}
+
+else if (res_id == moves_get)
+{
+	if (async_load[? "status"])
+	{
+		moves = async_load[? "result"];
+		moves_ready = true;
+		gameSearch(moves, winner);
+	}
+}
+
+else if (res_id == winner_get)
+{
+	if (async_load[? "status"])
+	{
+		winner = async_load[? "result"];
+		winner_ready = true;
+		gameSearch(moves, winner);
 	}
 }
