@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "tttdb",
+    "password": "tttdb",
+    "database": "tttdb",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "tttdb",
+    "password": "tttdb",
+    "database": "tttdb",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "tttdb",
+    "password": "tttdb",
+    "database": "tttdb",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
