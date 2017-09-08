@@ -1,5 +1,13 @@
 # TTTDB
 
+🎵 *Well, I had me a boy  
+turned him into a man  
+I showed him all the things  
+that he didn't understand  
+Whoa, and then I let him go* 🎵
+
+---
+
 A little experiment in databases, APIs, and machine learning.
 
 A database of different tic-tac-toe games that client apps can access via an API to help them make the best moves, hopefully.
