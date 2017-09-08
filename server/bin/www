@@ -19,11 +19,6 @@ db.db
     console.log('Database connection is OK.')
 
     db.useTable(true)
-    .then(() => {
-      db.addGame("453", "x")
-      db.addGame("123", "o")
-      db.addGame("1234", "c")
-    })
   })
   .catch(err => {
     console.error(`Can't connect to database! ${err}`)
