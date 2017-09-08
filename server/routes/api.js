@@ -7,7 +7,7 @@ router.get('/find', function(req, res, next) {
 
   db.findGame(parseInt(req.query.gameID))
     .then(game => {
-      res.json(game.dataValues)
+      res.send(JSON.stringify(game.dataValues))
     })
 });
 
@@ -16,7 +16,7 @@ router.get('/search', function(req, res, next) {
   db.searchGames(req.query.moves, req.query.winner)
     .then(games => {
         res.setHeader('Content-Type', 'application/json')
-        res.json(games)
+        res.send(JSON.stringify(games))
     })
 });
 
