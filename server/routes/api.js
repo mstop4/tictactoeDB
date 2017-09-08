@@ -40,8 +40,6 @@ router.get('/search/:format', function(req, res, next) {
 
 router.get('/:id/:format', function(req, res, next) {
 
-  console.log(req.params.format, req.params.id)
-
   db.findGame(parseInt(req.params.id))
     .then(game => {
 
