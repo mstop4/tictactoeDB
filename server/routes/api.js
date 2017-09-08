@@ -24,6 +24,8 @@ router.get('/search/:format', function(req, res, next) {
       } else if (req.params.format === "json") {
 
         // Send JSON
+        res.setHeader('Content-Type', 'application/json');
+
         if (games.length > 0) {
           res.send(JSON.stringify(games))
         } else {
@@ -55,6 +57,8 @@ router.get('/:id/:format', function(req, res, next) {
       } else if (req.params.format === "json") {
 
         // Send JSON
+        res.setHeader('Content-Type', 'application/json')
+
         if (game) {
           res.send(JSON.stringify(game.dataValues))
         } else {
