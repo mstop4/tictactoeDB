@@ -3,17 +3,28 @@ var router = express.Router();
 var db = require('../db');
 
 /* GET game. */
-router.get('/getMoves', function(req, res, next) {
+router.get('/getOne', function(req, res, next) {
 
-  db.getMoves(parseInt(req.query.gameID))
+  db.getOneGame(parseInt(req.query.gameID))
     .then(game => {
       res.json(game.dataValues)
     })
 });
 
+router.get('/search', function(req, res, next) {
+
+  console.log(req.query.moves)
+
+  db.searchGames(req.query.moves, req.query.winner)
+    .then(games => {
+        res.setHeader('Content-Type', 'application/json')
+        res.json(games)
+    })
+});
+
 router.get('/getAll', function(req, res, next) {
 
-  db.queryGames()
+  db.getAllGames()
     .then(game => {
         res.setHeader('Content-Type', 'application/json')
         res.json(game)
@@ -22,7 +33,7 @@ router.get('/getAll', function(req, res, next) {
 
 router.post('/add', function(req, res, next) {
   db.addGame(req.query.moves, req.query.winner)
-  res.send("OK");
+  res.render('gameAdd');
 });
 
 module.exports = router;

@@ -8,9 +8,14 @@
   </header>
 
   <main>
-    <h1>Game #<%= id %></h1>
-    <p>Moves: <%= moves %></p>
-    <p>Winner: <%= winner %></p>
+    <% if (game) { %>
+      <h1>Game #<%= game.id %></h1>
+      <p>Moves: <%= game.moves %></p>
+      <p>Winner: <%= game.winner %></p>
+    <% } else { %>
+      <h1>Game not found.</h1>
+      <p>That game does not exist.</p>
+    <% } %>
   </main>
 
   <footer>

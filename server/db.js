@@ -36,11 +36,24 @@ addGame = (moves, winner) => {
   })
 }
 
-queryGames = () => {
+getAllGames = () => {
   return Games.findAll()
 }
 
-getMoves = (gameNum) => {
+searchGames = (moves, winner) => {
+
+  let sMoves = moves ? moves : ""
+  let sWinner = winner ? winner : "%"
+
+  return Games.findAll({
+    where: {
+      moves: { $ilike: sMoves + "%" },
+      winner: { $ilike: sWinner.toUpperCase() }
+    }
+  })
+}
+
+getOneGame = (gameNum) => {
   return Games.findById(gameNum)
 }
 
@@ -48,6 +61,7 @@ module.exports = {
   db: db,
   useTable: useTable,
   addGame: addGame,
-  queryGames: queryGames,
-  getMoves: getMoves
+  getAllGames: getAllGames,
+  searchGames: searchGames,
+  getOneGame: getOneGame
 }
