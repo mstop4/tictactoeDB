@@ -3,9 +3,9 @@ var router = express.Router();
 var db = require('../db');
 
 /* GET game. */
-router.get('/getOne', function(req, res, next) {
+router.get('/find', function(req, res, next) {
 
-  db.getOneGame(parseInt(req.query.gameID))
+  db.findGame(parseInt(req.query.gameID))
     .then(game => {
       if (game) {
         res.render('gameInfo', {game: game.dataValues})
@@ -15,11 +15,19 @@ router.get('/getOne', function(req, res, next) {
     })
 });
 
-router.get('/getAll', function(req, res, next) {
+router.get('/search', function(req, res, next) {
 
-  db.getAllGames()
+  db.searchGames(req.query.moves, req.query.winner)
     .then(games => {
-        res.render('gameIndex', {games: games})
+
+        let sMoves = req.query.moves ? req.query.moves : "Any"
+        let sWinner = req.query.winner ? req.query.winner : "Any"
+
+        res.render('gameIndex', {
+          games: games,
+          moves: sMoves,
+          winner: sWinner
+        })
     })
 });
 

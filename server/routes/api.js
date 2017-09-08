@@ -3,9 +3,9 @@ var router = express.Router();
 var db = require('../db');
 
 /* GET game. */
-router.get('/getOne', function(req, res, next) {
+router.get('/find', function(req, res, next) {
 
-  db.getOneGame(parseInt(req.query.gameID))
+  db.findGame(parseInt(req.query.gameID))
     .then(game => {
       res.json(game.dataValues)
     })
@@ -13,21 +13,10 @@ router.get('/getOne', function(req, res, next) {
 
 router.get('/search', function(req, res, next) {
 
-  console.log(req.query.moves)
-
   db.searchGames(req.query.moves, req.query.winner)
     .then(games => {
         res.setHeader('Content-Type', 'application/json')
         res.json(games)
-    })
-});
-
-router.get('/getAll', function(req, res, next) {
-
-  db.getAllGames()
-    .then(game => {
-        res.setHeader('Content-Type', 'application/json')
-        res.json(game)
     })
 });
 

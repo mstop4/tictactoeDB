@@ -53,7 +53,7 @@ searchGames = (moves, winner) => {
   })
 }
 
-getOneGame = (gameNum) => {
+findGame = (gameNum) => {
   return Games.findById(gameNum)
 }
 
@@ -63,5 +63,5 @@ module.exports = {
   addGame: addGame,
   getAllGames: getAllGames,
   searchGames: searchGames,
-  getOneGame: getOneGame
+  findGame: findGame
 }
