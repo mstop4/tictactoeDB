@@ -20,4 +20,5 @@ A database of different tic-tac-toe games that client apps can access via an API
     - PostgreSQL
     
 ### Frontend
-- TBA
+- GameMaker Studio 2
+- More TBA
