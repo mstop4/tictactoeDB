@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description draw
 
 var lineWidth = 6;
 
@@ -25,3 +24,10 @@ if (winLineType <> "" && winLineIndex > -1)
 		}	
 	}
 }
+
+draw_set_font(fnt_ui);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_text(0,0,"Moves: " + string(moves));
+
+draw_text(0,32,searchMes + "\n" + resultsMes);

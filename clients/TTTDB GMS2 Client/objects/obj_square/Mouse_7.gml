@@ -7,7 +7,7 @@ if (!obj_tictactoe.gameOver && value == "")
 	{
 		value = "X";
 		obj_tictactoe.whoseTurn = turn.O;
-		obj_tictactoe.alarm[0] = 30;
+		obj_tictactoe.alarm[0] = 15;
 	}
 
 	else if (obj_tictactoe.whoseTurn == turn.O)

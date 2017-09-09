@@ -1,12 +1,12 @@
 for (var i=0; i<3; i++)
 {
-	// Columns
-	if (grid[0,i] <> "" && (grid[0,i] == grid[1,i] && grid[0,i] == grid[2,i]))
-		return [true, "column", i, grid[0,i]];
-		
 	// Rows
+	if (grid[0,i] <> "" && (grid[0,i] == grid[1,i] && grid[0,i] == grid[2,i]))
+		return [true, "row", i, grid[0,i]];
+		
+	// Columns
 	if (grid[i,0] <> "" && (grid[i,0] == grid[i,1] && grid[i,0] == grid[i,2]))
-		return [true, "row", i, grid[i,0]];	
+		return [true, "column", i, grid[i,0]];	
 }
 
 // Diagonals

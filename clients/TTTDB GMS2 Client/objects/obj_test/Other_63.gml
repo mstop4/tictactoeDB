@@ -11,7 +11,7 @@ if (res_id == moves_post)
 		
 		if (winner_ready && moves_ready)
 		{
-			gameAdd(moves, winner);
+			post_game = gameAdd(moves, winner);
 			winner_ready = false;
 			moves_ready = false;
 		}
@@ -27,7 +27,7 @@ else if (res_id == winner_post)
 		
 		if (winner_ready && moves_ready)
 		{
-			gameAdd(moves, winner);
+			post_game = gameAdd(moves, winner);
 			winner_ready = false;
 			moves_ready = false;
 		}
@@ -42,7 +42,7 @@ else if (res_id == moves_get)
 		moves_ready = true;
 		if (winner_ready && moves_ready)
 		{
-			gameSearch(moves, winner);
+			get_game = gameSearch(moves, winner);
 			winner_ready = false;
 			moves_ready = false;
 		}
@@ -58,7 +58,7 @@ else if (res_id == winner_get)
 		
 		if (winner_ready && moves_ready)
 		{
-			gameSearch(moves, winner);
+			get_game = gameSearch(moves, winner);
 			winner_ready = false;
 			moves_ready = false;
 		}

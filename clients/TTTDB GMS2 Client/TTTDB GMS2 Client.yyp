@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "65a751d1-15fd-4b96-bb7e-2b16129cb238",
+            "Value": {
+                "id": "d4c03c0b-fadc-4ea1-8420-31d7db4ebabd",
+                "resourcePath": "scripts\\compTurn\\compTurn.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "745077d1-39b3-485c-b6a8-7eb9f225348e",
             "Value": {
                 "id": "e4bc5989-4f88-46a9-b5a0-2d549e8a79b6",
@@ -277,12 +285,21 @@
                 "resourcePath": "views\\f7f4513f-1980-4264-a616-ff0e714d097a.yy",
                 "resourceType": "GMFolder"
             }
+        },
+        {
+            "Key": "f917f994-4117-44b8-931d-f1179577a33b",
+            "Value": {
+                "id": "36a0547c-5cef-431b-b747-1d6ef4bf029d",
+                "resourcePath": "fonts\\fnt_ui\\fnt_ui.yy",
+                "resourceType": "GMFont"
+            }
         }
     ],
     "script_order": [
         "cd14526b-bdf5-4d7f-81e3-9c78e946c683",
         "3734a97f-a544-4ee5-a85c-6724b1f82cc5",
-        "2a692a6a-f82e-49d7-b0db-d4918969442e"
+        "2a692a6a-f82e-49d7-b0db-d4918969442e",
+        "65a751d1-15fd-4b96-bb7e-2b16129cb238"
     ],
     "tutorial": ""
 }
