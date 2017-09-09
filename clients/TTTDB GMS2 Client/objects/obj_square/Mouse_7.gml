@@ -7,6 +7,7 @@ if (!obj_tictactoe.gameOver && value == "")
 	{
 		value = "X";
 		obj_tictactoe.whoseTurn = turn.O;
+		obj_tictactoe.alarm[0] = 30;
 	}
 
 	else if (obj_tictactoe.whoseTurn == turn.O)
@@ -22,20 +23,11 @@ if (!obj_tictactoe.gameOver && value == "")
 		var result = checkForWinner();
 		var rStr = "";
 		
-		if (!result[0])
-		{
-			//rStr = "No Winner yet.";
-		}
-		else
-		{
-			//rStr = "Winner: " + result[3] + "\n" + 
-						 //"Location: " + result[1] + " " + string(result[2]);
-						 
+		if (result[0])	
+		{ 
 			winLineType = result[1];
 			winLineIndex = result[2];
 			gameOver = true;
 		}
-		
-		//show_message_async(rStr);
 	}
 }
