@@ -31,6 +31,8 @@ if (!gameOver && whoseTurn == turn.O)
 		winLineType = result[1];
 		winLineIndex = result[2];
 		gameOver = true;
+		
+		gameAdd(moves, result[3]);
 	}
 	
 	else

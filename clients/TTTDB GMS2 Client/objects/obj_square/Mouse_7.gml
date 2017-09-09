@@ -18,6 +18,7 @@ if (!obj_tictactoe.gameOver && value == "")
 	
 	obj_tictactoe.grid[index mod 3, index div 3] = value;
 	obj_tictactoe.moves += string(index);
+	
 	with (obj_tictactoe) 
 	{
 		var result = checkForWinner();
@@ -28,6 +29,14 @@ if (!obj_tictactoe.gameOver && value == "")
 			winLineType = result[1];
 			winLineIndex = result[2];
 			gameOver = true;
+			
+			gameAdd(moves, result[3]);
+		}
+		
+		else if (string_length(moves) >= 9)
+		{
+			gameOver = true;
+			gameAdd(moves, "C");
 		}
 	}
 }
