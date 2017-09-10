@@ -1,6 +1,7 @@
 /// @param resList resList
+/// @param mySymbol mySymbol
 
-if (!gameOver && whoseTurn == turn.O)
+if (!gameOver && whoseTurn == argument[1])
 {
 	var raffle = ds_list_create();
 	possibleMovesMes = "";
@@ -36,7 +37,7 @@ if (!gameOver && whoseTurn == turn.O)
 	{
 		if (index == raffle[| 0])
 		{
-			value = "O"
+			value = argument[1];
 			other.grid[index mod 3, index div 3] = value;
 			other.moves += string(index);
 		}
@@ -55,6 +56,11 @@ if (!gameOver && whoseTurn == turn.O)
 	}
 	
 	else
-		whoseTurn = turn.X;
+	{
+		if (argument[1] == "X")
+			whoseTurn = "O";
+		else
+			whoseTurn = "X";
+	}
 	ds_list_destroy(raffle);
 }

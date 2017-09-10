@@ -3,7 +3,8 @@
 
 gameOver = false;
 moves = "";
-whoseTurn = turn.X;
+mySymbol = choose("X", "O");
+whoseTurn = "X";
 winLineType = "";
 winLineIndex = -1;
 
@@ -15,3 +16,5 @@ for (var i=0; i<3; i++)
 
 with (obj_square)
 	value = "";
+	
+isItCompTurn();
