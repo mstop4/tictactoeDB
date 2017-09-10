@@ -1,5 +1,5 @@
 with (obj_tictactoe)
 {
 		if (mySymbol == whoseTurn)
-			alarm[0] = 15;
+			alarm[0] = 1;
 }
