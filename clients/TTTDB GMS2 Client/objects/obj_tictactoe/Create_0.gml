@@ -14,6 +14,7 @@ winLineIndex = -1;
 searchReq = -1;
 searchMes = "";
 resultsMes = "";
+possibleMovesMes = "";
 
 for (var j=0; j<3; j++)
 {

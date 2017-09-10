@@ -17,6 +17,7 @@ if (res_id == searchReq)
 		if (!is_undefined(ds_map_find_value(resObj, "error")) && resObj[? "error"] == "NO RESULTS")
 		{
 			contents = "No games found.";
+			compTurn("NO RESULTS");
 		}
 		else
 		{
@@ -29,9 +30,9 @@ if (res_id == searchReq)
 			}
 		}
 		resultsMes = contents;
+		compTurn(resList);
 	}
 	else
-		json = "null"
+		resultsMes = "null"
+		compTurn("NO RESULTS");
 }
-
-compTurn();
