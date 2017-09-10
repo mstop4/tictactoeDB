@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (!obj_tictactoe.gameOver && value == "")
+if (!obj_tictactoe.gameOver && value == "" && obj_tictactoe.numPlayers > 0)
 {
 	if (obj_tictactoe.whoseTurn == "X")
 	{
@@ -34,11 +34,17 @@ if (!obj_tictactoe.gameOver && value == "")
 			gameOver = true;
 			
 			gameAdd(moves, result[3]);
+			
+			if (result[3] == "X")
+				xWins++;
+			else if (result[3] == "O")
+				oWins++;
 		}
 		
 		else if (string_length(moves) >= 9)
 		{
 			gameOver = true;
+			cGames++;
 			gameAdd(moves, "C");
 		}
 	}

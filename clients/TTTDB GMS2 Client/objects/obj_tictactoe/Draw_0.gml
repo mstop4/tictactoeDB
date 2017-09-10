@@ -32,3 +32,8 @@ draw_text(0,0,"I am " + mySymbol + ".\n" +
 							"Moves sequence: " + string(moves) + "\n" +
 							"Moves possible: " + possibleMovesMes + "\n" +
 							searchMes + "\n" + resultsMes);
+							
+draw_set_halign(fa_right);
+draw_text(room_width,0,"X Wins: " + string(xWins) + "\n" +
+											 "O Wins: " + string(oWins) + "\n" +
+											 "Draws: " + string(cGames));

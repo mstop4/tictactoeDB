@@ -10,29 +10,32 @@ if (res_id == searchReq)
 		json = json_decode(async_load[? "result"]);
 		var resList = json[? "default"];
 		var resListSize = ds_list_size(resList);
-		var contents = "";
+		resultsMes = "";
 		
 		// Check for "NO RESULTS" first
 		var resObj = resList[| 0];		
 		if (!is_undefined(ds_map_find_value(resObj, "error")) && resObj[? "error"] == "NO RESULTS")
 		{
-			contents = "No games found.";
+			resultsMes = "No games found.";
 			compTurn("NO RESULTS", mySymbol);
 		}
+		
 		else
 		{
 			for (var i=0; i<resListSize; i++)
 			{
 				resObj = resList[| i];
-				contents += "Id: " + string(resObj[? "id"]) +
+				resultsMes += "Id: " + string(resObj[? "id"]) +
 									  ", Moves: " + resObj[? "moves"] +
 										", Winner: " + resObj[? "winner"] + "\n";
 			}
+			compTurn(resList, mySymbol);
 		}
-		resultsMes = contents;
-		compTurn(resList, mySymbol);
 	}
+	
 	else
+	{
 		resultsMes = "null"
 		compTurn("NO RESULTS", mySymbol);
+	}
 }

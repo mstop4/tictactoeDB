@@ -3,7 +3,6 @@
 
 gameOver = false;
 moves = "";
-mySymbol = choose("X", "O");
 whoseTurn = "X";
 winLineType = "";
 winLineIndex = -1;
@@ -16,5 +15,17 @@ for (var i=0; i<3; i++)
 
 with (obj_square)
 	value = "";
-	
+
+switch (numPlayers)
+{
+	case 0:
+		mySymbol = "X";
+		break;
+	case 1:
+		mySymbol = choose("X", "O");
+		break;
+	default:
+		mySymbol = "";
+}
+
 isItCompTurn();
