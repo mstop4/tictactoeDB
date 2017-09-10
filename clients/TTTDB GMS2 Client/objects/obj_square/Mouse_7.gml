@@ -3,17 +3,20 @@
 
 if (!obj_tictactoe.gameOver && value == "")
 {
-	if (obj_tictactoe.whoseTurn == turn.X)
+	if (obj_tictactoe.whoseTurn == "X")
 	{
 		value = "X";
-		obj_tictactoe.whoseTurn = turn.O;
-		obj_tictactoe.alarm[0] = 15;
+		obj_tictactoe.whoseTurn = "O";
+		
+		isItCompTurn();
 	}
 
-	else if (obj_tictactoe.whoseTurn == turn.O)
+	else if (obj_tictactoe.whoseTurn == "O")
 	{
 		value = "O";
-		obj_tictactoe.whoseTurn = turn.X;
+		obj_tictactoe.whoseTurn = "X";
+		
+		isItCompTurn();
 	}
 	
 	obj_tictactoe.grid[index mod 3, index div 3] = value;

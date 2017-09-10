@@ -1,13 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-enum turn {
-	X, O
-}
-
 gameOver = false;
 moves = "";
-whoseTurn = turn.X;
+mySymbol = choose("X", "O");
+whoseTurn = "X";
 winLineType = "";
 winLineIndex = -1;
 
@@ -25,3 +22,5 @@ for (var j=0; j<3; j++)
 		grid[i, j] = "";
 	}
 }
+
+isItCompTurn();

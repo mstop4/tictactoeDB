@@ -3,6 +3,6 @@
 
 if (!gameOver)
 {
-	searchReq = gameSearch(moves, "O");
+	searchReq = gameSearch(moves, mySymbol);
 	searchMes = "Search #" + string(searchReq) + ": searching for " + moves;
 }
