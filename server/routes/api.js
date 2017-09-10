@@ -72,7 +72,6 @@ router.get('/:id/:format', function(req, res, next) {
 router.post('/add', function(req, res, next) {
   db.addGame(req.query.moves, req.query.winner)
   res.send("Game Added!")
-  //res.render('gameAdd');
 });
 
 module.exports = router;
