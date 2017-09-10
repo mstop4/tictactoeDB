@@ -2,9 +2,34 @@ var db = require('../models');
 var Game = db.Game;
 
 addGame = (moves, winner) => {
-  return Game.create({
+
+  // findOrCreate is bugged in Sequelize 4.8.0 + pg 7.2.0
+
+  Game.findOne({
+    where: {
       moves: moves,
       winner: winner.toUpperCase()
+    }
+  })
+  .then(game => {
+    // if game exists, update it
+    if (!game) {
+      return Game.create({
+        moves: moves,
+        winner: winner.toUpperCase()
+      })
+    // else update
+    } else {
+      return Game.update({
+        moves: moves,
+        winner: winner.toUpperCase()
+      },
+      {
+        where: {
+          id: game.dataValues.id
+        }
+      })
+    }
   })
 }
 
