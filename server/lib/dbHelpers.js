@@ -16,13 +16,15 @@ addGame = (moves, winner) => {
     if (!game) {
       return Game.create({
         moves: moves,
-        winner: winner.toUpperCase()
+        winner: winner.toUpperCase(),
+        timesPlayed: 1
       })
     // else update
     } else {
       return Game.update({
         moves: moves,
-        winner: winner.toUpperCase()
+        winner: winner.toUpperCase(),
+        timesPlayed: game.dataValues.timesPlayed+1
       },
       {
         where: {
@@ -35,6 +37,15 @@ addGame = (moves, winner) => {
 
 getAllGames = () => {
   return Game.findAll()
+}
+
+getMostRecentGames = (number) => {
+  return Game.findAll({
+    limit: number,
+    order: [
+      ['updatedAt', 'DESC']
+    ]
+  })
 }
 
 searchGames = (moves, winner) => {
@@ -58,5 +69,6 @@ module.exports = {
   addGame: addGame,
   getAllGames: getAllGames,
   searchGames: searchGames,
+  getMostRecentGames: getMostRecentGames,
   findGame: findGame
 }
