@@ -13,10 +13,10 @@ A database of different tic-tac-toe games that client apps can access via an API
 ## Stack
 
 ### Backend
-- Node 6.11.1 
-- Express.js 4.15.2
-- Sequelize 4.8.0
-    - PostgreSQL 7.2.0
+- Node.js
+- Express.js 
+- Sequelize
+    - PostgreSQL
     
 ### Frontend
 - GameMaker Studio 2.1
