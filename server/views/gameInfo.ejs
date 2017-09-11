@@ -11,10 +11,30 @@
     <% if (game) { %>
       <h1>Game #<%= game.id %></h1>
       <p>Moves: <%= game.moves %></p>
+
+      <table>
+        <% for (let i = 0; i < 3; i++) { %>
+          <tr>
+          <% for (let j = 0; j < 3; j++) { %>
+            <td>
+            <% let curSquare = game.moves.indexOf(i*3+j) %>
+            <% if (curSquare != -1) { %>
+              <% if (curSquare % 2 === 0) { %>
+                X
+              <% } else { %>
+                O
+              <% } %>
+            <% } %>
+
+            </td>
+          <% } %>
+          </tr>
+        <% } %>
+      </table>
       <p>Winner: <%= game.winner %></p>
     <% } else { %>
       <h1>Game not found.</h1>
-      <p>That game does not exist.</p>
+      <p>The game with that ID does not exist.</p>
     <% } %>
   </main>
 

@@ -19,12 +19,34 @@
       <tr>
         <th>Game</th>
         <th>Moves</th>
+        <th>Grid</th>
         <th>Winner</th>
       </tr>
       <% games.forEach( function(game) { %>
         <tr>
           <td><%= game.id %></td>
           <td><%= game.moves %></td>
+          <td>
+            <table>
+              <% for (let i = 0; i < 3; i++) { %>
+                <tr>
+                <% for (let j = 0; j < 3; j++) { %>
+                  <td>
+                  <% let curSquare = game.moves.indexOf(i*3+j) %>
+                  <% if (curSquare != -1) { %>
+                    <% if (curSquare % 2 === 0) { %>
+                      X
+                    <% } else { %>
+                      O
+                    <% } %>
+                  <% } %>
+
+                  </td>
+                <% } %>
+                </tr>
+              <% } %>
+            </table>
+          </td>
           <td><%= game.winner %></td>
         </tr>
       <% }); %>
