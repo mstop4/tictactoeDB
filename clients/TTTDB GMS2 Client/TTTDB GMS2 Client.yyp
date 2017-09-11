@@ -55,6 +55,30 @@
             }
         },
         {
+            "Key": "244fce62-d8ad-4f35-af1f-66214ceb5e42",
+            "Value": {
+                "id": "162b8eb3-b865-4a74-9c52-748d3ca22a4c",
+                "resourcePath": "objects\\obj_tictactoe\\obj_tictactoe.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2844269c-7b53-41a8-9b66-3dab43cc9373",
+            "Value": {
+                "id": "9830188d-f33b-4adf-a5ef-9310f660ceeb",
+                "resourcePath": "objects\\obj_square\\obj_square.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2a692a6a-f82e-49d7-b0db-d4918969442e",
+            "Value": {
+                "id": "b2400864-ecf9-4700-9e2c-56f5a23e4fd6",
+                "resourcePath": "scripts\\checkForWinner\\checkForWinner.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2e3326ea-9479-47a0-8763-99b82cbc0107",
             "Value": {
                 "id": "1b140444-be42-4bbd-9f2c-5211e4f2d249",
@@ -95,6 +119,14 @@
             }
         },
         {
+            "Key": "5401dc9b-25a5-43e4-927c-68173ef48b79",
+            "Value": {
+                "id": "fecfd458-4287-4339-8b22-a34dcb13b67e",
+                "resourcePath": "scripts\\isItCompTurn\\isItCompTurn.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "59e4d5dc-1ccb-4cc4-8cd3-5a1f26302e5d",
             "Value": {
                 "id": "8043f601-34c6-4780-b0e4-6240350fd7c1",
@@ -108,6 +140,14 @@
                 "id": "fabfce17-630c-4161-8dc2-87eed006ab63",
                 "resourcePath": "views\\5e3c76bb-ebe5-4e90-b8a8-2c71d70224c1.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "65a751d1-15fd-4b96-bb7e-2b16129cb238",
+            "Value": {
+                "id": "d4c03c0b-fadc-4ea1-8420-31d7db4ebabd",
+                "resourcePath": "scripts\\compTurn\\compTurn.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -151,11 +191,27 @@
             }
         },
         {
+            "Key": "a0e66cb7-cd87-474c-af0f-a4129251e07e",
+            "Value": {
+                "id": "7eda17d2-16e7-41a0-b4d5-776eeca67856",
+                "resourcePath": "fonts\\fnt_XO\\fnt_XO.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "ec533e3c-8638-49f6-8892-b743adb1ca46",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "aaddd80d-ab7b-4940-aad0-ad4612d5021f",
+            "Value": {
+                "id": "3a22bd47-58c7-48b0-830d-a99c9ea77391",
+                "resourcePath": "sprites\\spr_square\\spr_square.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -237,11 +293,22 @@
                 "resourcePath": "views\\f7f4513f-1980-4264-a616-ff0e714d097a.yy",
                 "resourceType": "GMFolder"
             }
+        },
+        {
+            "Key": "f917f994-4117-44b8-931d-f1179577a33b",
+            "Value": {
+                "id": "36a0547c-5cef-431b-b747-1d6ef4bf029d",
+                "resourcePath": "fonts\\fnt_ui\\fnt_ui.yy",
+                "resourceType": "GMFont"
+            }
         }
     ],
     "script_order": [
         "cd14526b-bdf5-4d7f-81e3-9c78e946c683",
-        "3734a97f-a544-4ee5-a85c-6724b1f82cc5"
+        "3734a97f-a544-4ee5-a85c-6724b1f82cc5",
+        "2a692a6a-f82e-49d7-b0db-d4918969442e",
+        "65a751d1-15fd-4b96-bb7e-2b16129cb238",
+        "5401dc9b-25a5-43e4-927c-68173ef48b79"
     ],
     "tutorial": ""
 }

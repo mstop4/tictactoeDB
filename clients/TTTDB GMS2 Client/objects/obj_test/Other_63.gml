@@ -8,7 +8,13 @@ if (res_id == moves_post)
 	{
 		moves = async_load[? "result"];
 		moves_ready = true;
-		gameAdd(moves, winner);
+		
+		if (winner_ready && moves_ready)
+		{
+			post_game = gameAdd(moves, winner);
+			winner_ready = false;
+			moves_ready = false;
+		}
 	}
 }
 
@@ -18,7 +24,13 @@ else if (res_id == winner_post)
 	{
 		winner = async_load[? "result"];
 		winner_ready = true;
-		gameAdd(moves, winner);
+		
+		if (winner_ready && moves_ready)
+		{
+			post_game = gameAdd(moves, winner);
+			winner_ready = false;
+			moves_ready = false;
+		}
 	}
 }
 
@@ -28,7 +40,12 @@ else if (res_id == moves_get)
 	{
 		moves = async_load[? "result"];
 		moves_ready = true;
-		gameSearch(moves, winner);
+		if (winner_ready && moves_ready)
+		{
+			get_game = gameSearch(moves, winner);
+			winner_ready = false;
+			moves_ready = false;
+		}
 	}
 }
 
@@ -38,6 +55,12 @@ else if (res_id == winner_get)
 	{
 		winner = async_load[? "result"];
 		winner_ready = true;
-		gameSearch(moves, winner);
+		
+		if (winner_ready && moves_ready)
+		{
+			get_game = gameSearch(moves, winner);
+			winner_ready = false;
+			moves_ready = false;
+		}
 	}
 }
