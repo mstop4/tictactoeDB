@@ -2,7 +2,8 @@
 module.exports = function(sequelize, DataTypes) {
   var Game = sequelize.define('Game', {
     moves: DataTypes.STRING,
-    winner: DataTypes.CHAR(1)
+    winner: DataTypes.CHAR,
+    timesPlayed: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

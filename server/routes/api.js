@@ -18,7 +18,7 @@ router.get('/search/:format', function(req, res, next) {
         res.render('gameIndex', {
           games: games,
           moves: sMoves,
-          winner: sWinner
+          winner: sWinner,
         })
 
       } else if (req.params.format === "json") {

@@ -21,6 +21,8 @@
         <th>Moves</th>
         <th>Grid</th>
         <th>Winner</th>
+        <th>First Played</th>
+        <th>Most Recently Played</th>
       </tr>
       <% games.forEach( function(game) { %>
         <tr>
@@ -48,6 +50,8 @@
             </table>
           </td>
           <td><%= game.winner %></td>
+          <td><%= game.createdAt %></td>
+          <td><%= game.updatedAt %></td>
         </tr>
       <% }); %>
     </table>
