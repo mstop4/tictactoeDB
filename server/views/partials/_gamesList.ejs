@@ -1,0 +1,42 @@
+<table>
+      <tr>
+        <th>Game</th>
+        <th>Moves</th>
+        <th>Grid</th>
+        <th>Winner</th>
+        <th>Times Played</th>
+        <th>First Played</th>
+        <th>Most Recently Played</th>
+      </tr>
+      <% games.forEach( function(game) { %>
+        <tr>
+          <td><%= game.id %></td>
+          <td><%= game.moves %></td>
+          <td>
+            <table class="grid">
+              <% for (let i = 0; i < 3; i++) { %>
+                <tr>
+                <% for (let j = 0; j < 3; j++) { %>
+                  <td class="grid">
+                  <% let curSquare = game.moves.indexOf(i*3+j) %>
+                  <% if (curSquare != -1) { %>
+                    <% if (curSquare % 2 === 0) { %>
+                      X
+                    <% } else { %>
+                      O
+                    <% } %>
+                  <% } %>
+                    &nbsp;
+                  </td>
+                <% } %>
+                </tr>
+              <% } %>
+            </table>
+          </td>
+          <td><%= game.winner %></td>
+          <td><%= game.timesPlayed %></td>
+          <td><%= game.createdAt %></td>
+          <td><%= game.updatedAt %></td>
+        </tr>
+      <% }); %>
+    </table>
