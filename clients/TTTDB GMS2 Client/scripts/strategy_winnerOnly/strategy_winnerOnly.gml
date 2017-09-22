@@ -7,7 +7,7 @@ if (!gameOver && whoseTurn == argument[1])
 	possibleMovesMes = "";
 	movePos = string_length(moves)+1;
 	
-	// find all moves that lead to wins
+	// add all moves that lead to wins
 	if (argument[0] <> "NO RESULTS")
 	{
 		for (var i=0; i<ds_list_size(argument[0]); i++)
@@ -20,7 +20,7 @@ if (!gameOver && whoseTurn == argument[1])
 		}
 	}
 	
-	// fallback to random strategy
+	// if no moves possible, fallback to random strategy
 	else
 	{
 		for (var i=0; i<9; i++)
