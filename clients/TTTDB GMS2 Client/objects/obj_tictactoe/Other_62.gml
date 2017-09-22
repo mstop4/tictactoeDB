@@ -9,14 +9,11 @@ if (res_id == searchReq)
 		// decode JSON
 		json = json_decode(async_load[? "result"]);
 		var resList = json[? "default"];
-		var resListSize = ds_list_size(resList);
-		resultsMes = "";
 		
-		// Check for "NO RESULTS" first
-		var resObj = resList[| 0];		
-		if (!is_undefined(ds_map_find_value(resObj, "error")) && resObj[? "error"] == "NO RESULTS")
+		// check for connect to server
+		if (resList == "unknown error")
 		{
-			resultsMes = "No games found.";
+			resultsMes = "Could not connect to server.";
 			
 			if (compStrategy[myTurn] == strategy.winnerOnly)
 				strategy_winnerOnly("NO RESULTS", myTurn);
@@ -24,19 +21,37 @@ if (res_id == searchReq)
 				strategy_loserOnly("NO RESULTS", myTurn);
 		}
 		
-		else
+		else 
 		{
-			for (var i=0; i<resListSize; i++)
+			var resListSize = ds_list_size(resList);
+			resultsMes = "";
+		
+			// Check for "NO RESULTS" first
+			var resObj = resList[| 0];		
+			if (!is_undefined(ds_map_find_value(resObj, "error")) && resObj[? "error"] == "NO RESULTS")
 			{
-				resObj = resList[| i];
-				resultsMes += "Id: " + string(resObj[? "id"]) +
-									  ", Moves: " + resObj[? "moves"] +
-										", Winner: " + resObj[? "winner"] + "\n";
+				resultsMes = "No games found.";
+			
+				if (compStrategy[myTurn] == strategy.winnerOnly)
+					strategy_winnerOnly("NO RESULTS", myTurn);
+				else if (compStrategy[myTurn] == strategy.loserOnly)
+					strategy_loserOnly("NO RESULTS", myTurn);
 			}
-			if (compStrategy[myTurn] == strategy.winnerOnly)
-				strategy_winnerOnly(resList, myTurn);
-			else if (compStrategy[myTurn] == strategy.loserOnly)
-				strategy_loserOnly(resList, myTurn);
+		
+			else
+			{
+				for (var i=0; i<resListSize; i++)
+				{
+					resObj = resList[| i];
+					resultsMes += "Id: " + string(resObj[? "id"]) +
+										  ", Moves: " + resObj[? "moves"] +
+											", Winner: " + resObj[? "winner"] + "\n";
+				}
+				if (compStrategy[myTurn] == strategy.winnerOnly)
+					strategy_winnerOnly(resList, myTurn);
+				else if (compStrategy[myTurn] == strategy.loserOnly)
+					strategy_loserOnly(resList, myTurn);
+			}
 		}
 	}
 	

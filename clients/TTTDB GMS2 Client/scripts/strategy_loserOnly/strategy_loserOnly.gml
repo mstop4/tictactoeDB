@@ -14,7 +14,7 @@ if (!gameOver && whoseTurn == argument[1])
 			ds_list_add(raffle, i);
 	}
 	
-	// remove all moves that don't lead lead to losses
+	// remove all moves that lead to losses
 	if (argument[0] <> "NO RESULTS")
 	{
 		for (var i=0; i<ds_list_size(argument[0]); i++)
