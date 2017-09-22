@@ -7,7 +7,14 @@ if (!gameOver && whoseTurn == argument[1])
 	possibleMovesMes = "";
 	movePos = string_length(moves)+1;
 	
-	// find all moves that lead to wins
+	// find moves remaining
+	for (var i=0; i<9; i++)
+	{
+		if (string_pos(string(i),moves) == 0)
+			ds_list_add(raffle, i);
+	}
+	
+	// remove all moves that don't lead lead to losses
 	if (argument[0] <> "NO RESULTS")
 	{
 		for (var i=0; i<ds_list_size(argument[0]); i++)
@@ -15,13 +22,13 @@ if (!gameOver && whoseTurn == argument[1])
 			var resObj = ds_list_find_value(argument[0], i);
 			var moveNum = real(string_char_at(resObj[? "moves"], movePos));
 			
-			if (ds_list_find_index(raffle,moveNum) == -1)
-				ds_list_add(raffle, moveNum);
+			if (ds_list_find_index(raffle,moveNum) <> -1)
+				ds_list_delete(raffle, ds_list_find_index(raffle,moveNum));
 		}
 	}
 	
-	// fallback to random strategy
-	else
+	// if no moves possible, fallback to random strategy
+	if (ds_list_size(raffle) == 0)
 	{
 		for (var i=0; i<9; i++)
 		{

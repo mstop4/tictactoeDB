@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "94370d86-36d1-4897-abc3-5f8cb766fe77",
+            "Value": {
+                "id": "ba919208-bafe-4796-a12b-bd13023a24cf",
+                "resourcePath": "scripts\\strategy_loserOnly\\strategy_loserOnly.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a0e66cb7-cd87-474c-af0f-a4129251e07e",
             "Value": {
                 "id": "7eda17d2-16e7-41a0-b4d5-776eeca67856",
@@ -359,6 +367,7 @@
         "2a692a6a-f82e-49d7-b0db-d4918969442e",
         "5401dc9b-25a5-43e4-927c-68173ef48b79",
         "65a751d1-15fd-4b96-bb7e-2b16129cb238",
+        "94370d86-36d1-4897-abc3-5f8cb766fe77",
         "f55b92ea-0f53-4136-bf77-f5ccf38ae0f6",
         "85a214d0-7f6a-4364-8de4-ec4daf1bbe07"
     ],

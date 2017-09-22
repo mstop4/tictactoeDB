@@ -8,14 +8,14 @@ symbol[1] = "O";
 
 gameOver = false;
 moves = "";
-numPlayers = 1;
+numPlayers = 0;
 myTurn = 0;
 whoseTurn = 0;
 winLineType = "";
 winLineIndex = -1;
 
-compStrategy[0] = strategy.winnerOnly;
-compStrategy[1] = strategy.winnerOnly;
+compStrategy[0] = strategy.loserOnly;
+compStrategy[1] = strategy.loserOnly;
 
 xWins = 0;
 oWins = 0;
