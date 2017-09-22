@@ -4,6 +4,8 @@ var db = require('../lib/dbHelpers');
 
 /* GET game. */
 
+
+
 router.get('/recent/:format', function(req, res, next) {
 
   let number
@@ -111,5 +113,10 @@ router.post('/add', function(req, res, next) {
   db.addGame(req.query.moves, req.query.winner)
   res.send("Game Added!")
 });
+
+router.delete('/all', function(req, res, next) {
+  db.clearGames()
+  res.send("Games Cleared!")
+})
 
 module.exports = router;

@@ -65,10 +65,18 @@ findGame = (gameNum) => {
   return Game.findById(gameNum)
 }
 
+clearGames = () => {
+    Game.destroy({
+    where: {},
+    truncate: true
+  })
+}
+
 module.exports = {
   addGame: addGame,
   getAllGames: getAllGames,
   searchGames: searchGames,
   getMostRecentGames: getMostRecentGames,
-  findGame: findGame
+  findGame: findGame,
+  clearGames: clearGames
 }
