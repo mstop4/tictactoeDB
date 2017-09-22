@@ -1,5 +1,7 @@
 /// @description Init
 
+#macro SERVER_ADDRESS "http://localhost:3000"
+
 randomize();
 initEnums();
 
@@ -15,7 +17,7 @@ winLineType = "";
 winLineIndex = -1;
 
 compStrategy[0] = strategy.loserOnly;
-compStrategy[1] = strategy.loserOnly;
+compStrategy[1] = strategy.winnerOnly;
 
 xWins = 0;
 oWins = 0;

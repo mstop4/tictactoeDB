@@ -1,7 +1,5 @@
 /// @description Init
 
-#macro SERVER_ADDRESS "http://192.168.0.11:3000"
-
 moves = "";
 winner = "";
 json = "";

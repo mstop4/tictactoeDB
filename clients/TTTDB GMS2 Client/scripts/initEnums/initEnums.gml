@@ -1,5 +1,5 @@
 enum strategy {
-	random,
+	randomOnly,
 	winnerOnly,
 	loserOnly
 }

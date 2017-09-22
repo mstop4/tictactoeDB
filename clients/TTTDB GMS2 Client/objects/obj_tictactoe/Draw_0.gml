@@ -29,7 +29,23 @@ draw_set_font(fnt_ui);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
+var strat;
+
+switch (compStrategy[myTurn])
+{
+	case strategy.randomOnly:
+		strat = "Random";
+		break;
+	case strategy.winnerOnly:
+		strat = "Winner Only";
+		break;
+	case strategy.loserOnly:
+		strat = "Loser Only";
+		break;
+}
+
 draw_text(0,0,"I am " + symbol[myTurn] + ".\n" + 
+							"Strategy: " + strat + "\n" +
 							"Moves sequence: " + string(moves) + "\n" +
 							"Moves possible: " + possibleMovesMes + "\n" +
 							searchMes + "\n" + resultsMes);
