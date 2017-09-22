@@ -1,8 +1,8 @@
 {
-    "id": "65a751d1-15fd-4b96-bb7e-2b16129cb238",
+    "id": "f8a1b38b-adff-44a8-aabe-faaf891a3885",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "compTurn",
+    "name": "initEnums",
     "IsCompatibility": false,
     "IsDnD": false
 }

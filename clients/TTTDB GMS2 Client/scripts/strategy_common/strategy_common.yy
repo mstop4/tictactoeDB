@@ -1,8 +1,8 @@
 {
-    "id": "5c09a9f5-7bf0-42e9-ba61-07f43fed850d",
+    "id": "85a214d0-7f6a-4364-8de4-ec4daf1bbe07",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "checkForWinner",
+    "name": "strategy_common",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,8 +1,21 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Start computer turn
 
 if (!gameOver)
 {
-	searchReq = gameSearch(moves, mySymbol);
-	searchMes = "Search #" + string(searchReq) + ": searching for " + moves;
+	if (compStrategy[myTurn] == strategy.winnerOnly)
+	{
+		searchReq = gameSearch(moves, symbol[myTurn]);
+		searchMes = "Search #" + string(searchReq) + ": searching for " + moves;
+	}
+	
+	else if (compStrategy[myTurn] == strategy.loserOnly)
+	{
+		searchReq = gameSearch(moves, symbol[!myTurn]);
+		searchMes = "Search #" + string(searchReq) + ": searching for " + moves;
+	}
+	
+	else
+	{
+		strategy_random(myTurn);
+	}
 }

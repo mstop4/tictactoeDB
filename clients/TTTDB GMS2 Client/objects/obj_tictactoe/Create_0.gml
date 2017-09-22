@@ -1,15 +1,21 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Init
 
 randomize();
+initEnums();
+
+symbol[0] = "X";
+symbol[1] = "O";
 
 gameOver = false;
 moves = "";
 numPlayers = 0;
-mySymbol = "";
-whoseTurn = "X";
+myTurn = 0;
+whoseTurn = 0;
 winLineType = "";
 winLineIndex = -1;
+
+compStrategy[0] = strategy.loserOnly;
+compStrategy[1] = strategy.loserOnly;
 
 xWins = 0;
 oWins = 0;
@@ -33,13 +39,13 @@ for (var j=0; j<3; j++)
 switch (numPlayers)
 {
 	case 0:
-		mySymbol = "X";
+		myTurn = whoseTurn;
 		break;
 	case 1:
-		mySymbol = choose("X", "O");
+		myTurn = choose(0, 1);
 		break;
 	default:
-		mySymbol = "";
+		myTurn = -1;
 }
 
 isItCompTurn();

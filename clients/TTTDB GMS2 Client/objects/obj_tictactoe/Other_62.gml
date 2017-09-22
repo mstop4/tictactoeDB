@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description serve response
 
 var res_id = async_load[? "id"];
 
@@ -7,6 +6,7 @@ if (res_id == searchReq)
 {
 	if (async_load[? "status"] == 0)
 	{
+		// decode JSON
 		json = json_decode(async_load[? "result"]);
 		var resList = json[? "default"];
 		var resListSize = ds_list_size(resList);
@@ -17,7 +17,11 @@ if (res_id == searchReq)
 		if (!is_undefined(ds_map_find_value(resObj, "error")) && resObj[? "error"] == "NO RESULTS")
 		{
 			resultsMes = "No games found.";
-			compTurn("NO RESULTS", mySymbol);
+			
+			if (compStrategy[myTurn] == strategy.winnerOnly)
+				strategy_winnerOnly("NO RESULTS", myTurn);
+			else if (compStrategy[myTurn] == strategy.loserOnly)
+				strategy_loserOnly("NO RESULTS", myTurn);
 		}
 		
 		else
@@ -29,13 +33,19 @@ if (res_id == searchReq)
 									  ", Moves: " + resObj[? "moves"] +
 										", Winner: " + resObj[? "winner"] + "\n";
 			}
-			compTurn(resList, mySymbol);
+			if (compStrategy[myTurn] == strategy.winnerOnly)
+				strategy_winnerOnly(resList, myTurn);
+			else if (compStrategy[myTurn] == strategy.loserOnly)
+				strategy_loserOnly(resList, myTurn);
 		}
 	}
 	
 	else
 	{
-		resultsMes = "null"
-		compTurn("NO RESULTS", mySymbol);
+		resultsMes = "null";
+		if (compStrategy[myTurn] == strategy.winnerOnly)
+			strategy_winnerOnly("NO RESULTS", myTurn);
+		else if (compStrategy[myTurn] == strategy.loserOnly)
+			strategy_loserOnly("NO RESULTS", myTurn);
 	}
 }
