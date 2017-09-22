@@ -5,16 +5,8 @@
 </head>
 <body>
 
-  <header>
-  </header>
-
   <main>
-
-    <h1>Game Listing</h1>
-
-    <h3>Moves: <%= moves %></h3>
-    <h3>Winner: <%= winner %></h3>
-    <h3>Results: <%= games.length %></h3>
+    <h1><%= number %> Most Recent Games</h1>
 
     <table>
       <tr>
@@ -35,7 +27,7 @@
               <% for (let i = 0; i < 3; i++) { %>
                 <tr>
                 <% for (let j = 0; j < 3; j++) { %>
-                  <td>
+                  <td class="grid">
                   <% let curSquare = game.moves.indexOf(i*3+j) %>
                   <% if (curSquare != -1) { %>
                     <% if (curSquare % 2 === 0) { %>
@@ -43,6 +35,8 @@
                     <% } else { %>
                       O
                     <% } %>
+                  <% } else { %>
+                    &nbsp;
                   <% } %>
 
                   </td>
@@ -52,16 +46,13 @@
             </table>
           </td>
           <td><%= game.winner %></td>
-          <td><%= game.timesPlayed</td>
+          <td><%= game.timesPlayed %></td>
           <td><%= game.createdAt %></td>
           <td><%= game.updatedAt %></td>
         </tr>
       <% }); %>
     </table>
   </main>
-
-  <footer>
-  </footer>
 
 </body>
 </html>
