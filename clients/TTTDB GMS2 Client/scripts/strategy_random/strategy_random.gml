@@ -1,4 +1,4 @@
-/// @param mySymbol mySymbol
+/// @param turnIndex turnIndex
 
 if (!gameOver && whoseTurn == argument[0])
 {
@@ -12,8 +12,8 @@ if (!gameOver && whoseTurn == argument[0])
 			ds_list_add(raffle, i);
 	}
 
-	strategy_common(raffle, argument[0]);
+	strategy_common(raffle, argument[1]);
 	
-	checkForWinner(argument[0]);
+	checkForWinner();
 	ds_list_destroy(raffle);
 }

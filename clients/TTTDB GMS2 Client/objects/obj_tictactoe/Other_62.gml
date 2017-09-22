@@ -17,7 +17,7 @@ if (res_id == searchReq)
 		if (!is_undefined(ds_map_find_value(resObj, "error")) && resObj[? "error"] == "NO RESULTS")
 		{
 			resultsMes = "No games found.";
-			strategy_winnerOnly("NO RESULTS", mySymbol);
+			strategy_winnerOnly("NO RESULTS", myTurn);
 		}
 		
 		else
@@ -29,13 +29,13 @@ if (res_id == searchReq)
 									  ", Moves: " + resObj[? "moves"] +
 										", Winner: " + resObj[? "winner"] + "\n";
 			}
-			strategy_winnerOnly(resList, mySymbol);
+			strategy_winnerOnly(resList, myTurn);
 		}
 	}
 	
 	else
 	{
 		resultsMes = "null";
-		strategy_winnerOnly("NO RESULTS", mySymbol);
+		strategy_winnerOnly("NO RESULTS", myTurn);
 	}
 }

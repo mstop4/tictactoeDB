@@ -1,5 +1,3 @@
-///@param mySymbol mySymbol
-
 var result = checkLines();
 var rStr = "";
 		
@@ -11,9 +9,9 @@ if (result[0])
 		
 	gameAdd(moves, result[3]);
 		
-	if (result[3] == "X")
+	if (result[3] == symbol[0])
 		xWins++;
-	else if (result[3] == "O")
+	else if (result[3] == symbol[1])
 		oWins++;
 		
 	if (numPlayers == 0)
@@ -22,25 +20,21 @@ if (result[0])
 	
 else
 {
-	if (argument[0] == "X")
-		whoseTurn = "O";
-	else
-		whoseTurn = "X";
+	whoseTurn = !whoseTurn;
 			
-	if (numPlayers == 0)
+	if (string_length(moves) >= 9)
 	{
-		if (string_length(moves) >= 9)
-		{
+		if (numPlayers == 0) 
 			alarm[1] = 2;
-			gameOver = true;
-			gameAdd(moves, "C");
-			cGames++;
-		}
+		gameOver = true;
+		gameAdd(moves, "C");
+		cGames++;
+	}
 			
-		else
-		{
-			mySymbol = whoseTurn;
-			isItCompTurn();
-		}
+	else
+	{
+		if (numPlayers == 0)
+			myTurn = whoseTurn;
+		isItCompTurn();
 	}
 }
