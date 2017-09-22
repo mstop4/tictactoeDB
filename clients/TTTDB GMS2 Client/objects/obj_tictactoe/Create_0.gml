@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Init
 
 randomize();
 
@@ -10,6 +9,9 @@ mySymbol = "";
 whoseTurn = "X";
 winLineType = "";
 winLineIndex = -1;
+
+compStrategy[0] = 1;
+compStrategy[1] = 1;
 
 xWins = 0;
 oWins = 0;

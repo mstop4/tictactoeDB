@@ -1,20 +1,46 @@
-for (var i=0; i<3; i++)
-{
-	// Rows
-	if (grid[0,i] <> "" && (grid[0,i] == grid[1,i] && grid[0,i] == grid[2,i]))
-		return [true, "row", i, grid[0,i]];
+///@param mySymbol mySymbol
+
+var result = checkLines();
+var rStr = "";
 		
-	// Columns
-	if (grid[i,0] <> "" && (grid[i,0] == grid[i,1] && grid[i,0] == grid[i,2]))
-		return [true, "column", i, grid[i,0]];	
+if (result[0])
+{						 
+	winLineType = result[1];
+	winLineIndex = result[2];
+	gameOver = true;
+		
+	gameAdd(moves, result[3]);
+		
+	if (result[3] == "X")
+		xWins++;
+	else if (result[3] == "O")
+		oWins++;
+		
+	if (numPlayers == 0)
+		alarm[1] = 2;
 }
-
-// Diagonals
-
-if (grid[0,0] <> "" && (grid[0,0] == grid[1,1] && grid[0,0] == grid[2,2]))
-	return [true, "diagonal", 0, grid[0,0]];
 	
-if (grid[2,0] <> "" && (grid[2,0] == grid[1,1] && grid[2,0] == grid[0,2]))
-	return [true, "diagonal", 1, grid[2,0]];
-	
-return [false, "", 0, ""];
+else
+{
+	if (argument[0] == "X")
+		whoseTurn = "O";
+	else
+		whoseTurn = "X";
+			
+	if (numPlayers == 0)
+	{
+		if (string_length(moves) >= 9)
+		{
+			alarm[1] = 2;
+			gameOver = true;
+			gameAdd(moves, "C");
+			cGames++;
+		}
+			
+		else
+		{
+			mySymbol = whoseTurn;
+			isItCompTurn();
+		}
+	}
+}
