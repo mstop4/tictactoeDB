@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../lib/dbHelpers');
+var moment = require('moment');
 
 /* GET game. */
 
@@ -24,7 +25,8 @@ router.get('/recent/:format', function(req, res, next) {
         // Send HTML
         res.render('gamesRecent', {
           games: games,
-          number: number
+          number: number,
+          moment: moment
         })
 
       } else if (req.params.format === "json") {
@@ -59,6 +61,7 @@ router.get('/search/:format', function(req, res, next) {
           games: games,
           moves: sMoves,
           winner: sWinner,
+          moment: moment
         })
 
       } else if (req.params.format === "json") {
@@ -87,9 +90,15 @@ router.get('/:id/:format', function(req, res, next) {
 
         // Send HTML
         if (game) {
-          res.render('gameInfo', {game: game.dataValues})
+          res.render('gameInfo', {
+            game: game.dataValues,
+            moment: moment
+          })
         } else {
-          res.render('gameInfo', {game: null})
+          res.render('gameInfo', {
+            game: null,
+            moment: moment
+          })
         }
 
       } else if (req.params.format === "json") {
