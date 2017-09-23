@@ -1,5 +1,5 @@
 <% if (games.length > 0) { %>
-  <table>
+  <table class="gamesList">
     <tr>
       <th>Game</th>
       <th>Moves</th>
@@ -11,36 +11,35 @@
     </tr>
     <% games.forEach(function(game) { %>
       <tr>
-        <td><%= game.id %></td>
-        <td><%= game.moves %></td>
-        <td>
+        <td class="gameCell"><%= game.id %></td>
+        <td class="gameCell"><%= game.moves %></td>
+        <td class="gameCell">
           <table class="grid">
             <% for (let i = 0; i < 3; i++) { %>
               <tr>
               <% for (let j = 0; j < 3; j++) { %>
-                <td class="grid">
                 <% let curSquare = game.moves.indexOf(i*3+j) %>
                 <% if (curSquare != -1) { %>
                   <% if (curSquare % 2 === 0) { %>
-                    X
+                  <td class="square squareX">X</td>
                   <% } else { %>
-                    O
+                  <td class="square squareO">O</td>
                   <% } %>
+                <% } else { %>
+                <td class="square">&nbsp;</td>
                 <% } %>
-                  &nbsp;
-                </td>
               <% } %>
               </tr>
             <% } %>
           </table>
         </td>
-        <td><%= game.winner %></td>
-        <td><%= game.timesPlayed %></td>
-        <td>
+        <td class="gameCell"><%= game.winner %></td>
+        <td class="gameCell"><%= game.timesPlayed %></td>
+        <td class="gameCell">
           <%= moment(game.createdAt).format('MMMM D YYYY') %><br/>
           <%= moment(game.createdAt).format('h:mm:ss a') %>
         </td>
-        <td>
+        <td class="gameCell">
           <%= moment(game.updatedAt).format('MMMM D YYYY') %><br/>
           <%= moment(game.updatedAt).format('h:mm:ss a') %>
         </td>

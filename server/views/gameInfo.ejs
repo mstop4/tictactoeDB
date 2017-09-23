@@ -4,12 +4,11 @@
 </head>
 <body>
 
-  <header>
-  </header>
+  <% include ./partials/_header %>
 
   <main>
     <% if (game) { %>
-      <h1>Game #<%= game.id %></h1>
+      <h2>Game #<%= game.id %></h2>
       <p><strong>Moves:</strong> <%= game.moves %></p>
 
       <table>
