@@ -10,7 +10,7 @@ if (res_id == searchReq)
 		json = json_decode(async_load[? "result"]);
 		var resList = json[? "default"];
 		
-		// check for connect to server
+		// check for connect to server (macOS)
 		if (resList == "unknown error")
 		{
 			resultsMes = "Could not connect to server.";
