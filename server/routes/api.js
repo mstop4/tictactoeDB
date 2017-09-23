@@ -81,7 +81,7 @@ router.get('/search/:format', function(req, res, next) {
     })
 });
 
-router.get('/:id/:format', function(req, res, next) {
+router.get('/game/:id/:format', function(req, res, next) {
 
   db.findGame(parseInt(req.params.id))
     .then(game => {

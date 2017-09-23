@@ -9,9 +9,22 @@
 
   <main>
 
-    <h2>Game Listing</h2>
+    <h2>Game Search</h2>
 
-    <h3>Moves: <%= moves %></h3>
+    <%
+      let movesText
+
+      console.log(moves)
+
+      if (moves != "Any") {
+        movesText = moves.split('').join('-')
+      } else {
+        movesText = moves
+      }
+    %>
+
+
+    <h3>Moves: <%= movesText %></h3>
     <h3>Winner: <%= winner %></h3>
     <h3>Results: <%= games.length %></h3>
 
