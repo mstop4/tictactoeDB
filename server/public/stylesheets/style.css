@@ -21,6 +21,21 @@ header {
   padding: 20px;
 }
 
+.title {
+  display: inline;
+}
+
+nav {
+  display: inline;
+  float: right;
+  margin: 0 50px 0 0;
+  font-size: 125%;
+}
+
+nav a {
+  color: yellow;
+}
+
 h2 {
   margin: 10px 0;
 }
@@ -30,7 +45,7 @@ h3 {
 }
 
 a {
-  color: #00B7FF;
+  color: #0060FF;
 }
 
 .gamesList {

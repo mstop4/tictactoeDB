@@ -11,8 +11,11 @@
     </tr>
     <% games.forEach(function(game) { %>
       <tr>
-        <td class="gameCell"><%= game.id %></td>
-        <td class="gameCell"><%= game.moves %></td>
+
+        <% let url = "/api/game/" + game.id + "/html" %>
+
+        <td class="gameCell"><a href=<%= url %>><%= game.id %></a></td>
+        <td class="gameCell"><%= game.moves.split('').join('-') %></td>
         <td class="gameCell">
           <table class="grid">
             <% for (let i = 0; i < 3; i++) { %>
