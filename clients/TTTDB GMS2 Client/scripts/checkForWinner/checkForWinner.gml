@@ -15,7 +15,12 @@ if (result[0])
 		oWins++;
 		
 	if (numPlayers == 0)
-		alarm[1] = 2;
+	{
+		if (delayedGame)
+			alarm[1] = 60;
+		else
+			alarm[1] = 2;
+	}
 }
 	
 else
@@ -24,8 +29,13 @@ else
 			
 	if (string_length(moves) >= 9)
 	{
-		if (numPlayers == 0) 
-			alarm[1] = 2;
+		if (numPlayers == 0)
+		{
+			if (delayedGame)
+				alarm[1] = 60;
+			else
+				alarm[1] = 2;
+		}
 		gameOver = true;
 		gameAdd(moves, "C");
 		cGames++;

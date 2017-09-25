@@ -8,6 +8,7 @@ initEnums();
 symbol[0] = "X";
 symbol[1] = "O";
 
+delayedGame = true;
 gameOver = false;
 moves = "";
 numPlayers = 0;
@@ -16,8 +17,8 @@ whoseTurn = 0;
 winLineType = "";
 winLineIndex = -1;
 
-compStrategy[0] = strategy.loserOnly;
-compStrategy[1] = strategy.winnerOnly;
+compStrategy[0] = strategy.winnerOnly;
+compStrategy[1] = strategy.loserOnly;
 
 xWins = 0;
 oWins = 0;

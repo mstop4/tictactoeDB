@@ -20,13 +20,14 @@
           <table class="grid">
             <% for (let i = 0; i < 3; i++) { %>
               <tr>
-              <% for (let j = 0; j < 3; j++) { %>
-                <% let curSquare = game.moves.indexOf(i*3+j) %>
-                <% if (curSquare != -1) { %>
-                  <% if (curSquare % 2 === 0) { %>
-                  <td class="square squareX">X</td>
+              <%
+                for (let j = 0; j < 3; j++) {
+                  let curSquare = game.moves.indexOf(i*3+j)
+                  if (curSquare != -1) {
+                    if (curSquare % 2 === 0) { %>
+                  <td class="square mark_X">X</td>
                   <% } else { %>
-                  <td class="square squareO">O</td>
+                  <td class="square mark_O">O</td>
                   <% } %>
                 <% } else { %>
                 <td class="square">&nbsp;</td>
@@ -36,7 +37,16 @@
             <% } %>
           </table>
         </td>
-        <td class="gameCell"><%= game.winner %></td>
+
+        <% if (game.winner === "X") { %>
+          <td class="gameCell mark_X">
+        <% } else if (game.winner === "O") { %>
+          <td class="gameCell mark_O">
+        <% } else { %>
+          <td class="gameCell mark_C">
+        <% } %>
+        <%= game.winner %></td>
+
         <td class="gameCell"><%= game.timesPlayed %></td>
         <td class="gameCell">
           <%= moment(game.createdAt).format('MMMM D YYYY') %><br/>
