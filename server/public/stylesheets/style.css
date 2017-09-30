@@ -16,9 +16,26 @@ main {
 header {
   position: fixed;
   width: 100%;
-  background-color: #00C000;
+  background-color: #60C040;
   color: white;
   padding: 20px;
+}
+
+.title {
+  display: inline;
+}
+
+nav {
+  display: inline;
+  float: right;
+  margin: 0 50px 0 0;
+  font-size: 125%;
+  color: #E0FF40;
+}
+
+nav a {
+  color: #E0FF40;
+  text-decoration: none;
 }
 
 h2 {
@@ -30,7 +47,11 @@ h3 {
 }
 
 a {
-  color: #00B7FF;
+  color: #0060FF;
+}
+
+th {
+  padding: 0 10px;
 }
 
 .gamesList {
@@ -51,16 +72,27 @@ a {
 
 .square {
   border: 1px solid #808080;
+  padding: 0;
   text-align: center;
   width: 30px;
   height: 30px;
   color: black;
 }
 
-.squareX {
+.mark_X {
   color: red;
+  font-weight: bold;
+  font-size: 150%;
 }
 
-.squareO {
+.mark_O {
   color: blue;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.mark_C {
+  color: gray;
+  font-weight: bold;
+  font-size: 150%;
 }

@@ -1,6 +1,6 @@
 /// @description Init
 
-#macro SERVER_ADDRESS "http://localhost:3000"
+#macro SERVER_ADDRESS "http://192.168.0.11:3000"
 
 randomize();
 initEnums();
@@ -8,6 +8,7 @@ initEnums();
 symbol[0] = "X";
 symbol[1] = "O";
 
+delayedGame = true;
 gameOver = false;
 moves = "";
 numPlayers = 0;
