@@ -17,7 +17,7 @@ winLineType = "";
 winLineIndex = -1;
 
 compStrategy[0] = strategy.loserOnly;
-compStrategy[1] = strategy.winnerOnly;
+compStrategy[1] = strategy.loserOnly;
 
 xWins = 0;
 oWins = 0;
