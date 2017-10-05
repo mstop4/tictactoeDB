@@ -1,6 +1,6 @@
 /// @description Init
 
-#macro SERVER_ADDRESS "http://192.168.0.11:3000"
+#macro SERVER_ADDRESS "http://10.0.1.178:3000"
 
 randomize();
 initEnums();
@@ -8,7 +8,7 @@ initEnums();
 symbol[0] = "X";
 symbol[1] = "O";
 
-delayedGame = true;
+delayedGame = false;
 gameOver = false;
 moves = "";
 numPlayers = 1;
@@ -17,8 +17,8 @@ whoseTurn = 0;
 winLineType = "";
 winLineIndex = -1;
 
-compStrategy[0] = strategy.loserOnly;
-compStrategy[1] = strategy.loserOnly;
+compStrategy[0] = strategy.winnerOnly;
+compStrategy[1] = strategy.winnerOnly;
 
 xWins = 0;
 oWins = 0;
